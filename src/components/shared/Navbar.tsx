@@ -10,8 +10,8 @@ import {
 } from "../ui/navigation-menu";
 import { Switch } from "../ui/switch";
 import { Button } from "../ui/button";
-import { AiOutlineMenu } from "react-icons/ai";
 import { usePathname } from "next/navigation";
+import MobileMenu from "./MobileMenu";
 
 
 const Navbar = () => {
@@ -93,11 +93,7 @@ const Navbar = () => {
             <Button variant="default">Login</Button>
         </div>
         {/* Mobile Hamber Menu */}
-        <div className="lg:hidden">
-          <Button>
-            <AiOutlineMenu />
-          </Button>
-        </div>
+        <MobileMenu></MobileMenu>
       </nav>
     </header>
   );
