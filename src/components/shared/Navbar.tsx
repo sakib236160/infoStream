@@ -1,3 +1,4 @@
+"use client";
 import Link from "next/link";
 import {
   NavigationMenu,
@@ -10,9 +11,11 @@ import {
 import { Switch } from "../ui/switch";
 import { Button } from "../ui/button";
 import { AiOutlineMenu } from "react-icons/ai";
+import { usePathname } from "next/navigation";
 
 
 const Navbar = () => {
+  const pathname = usePathname()
   return (
     <header className="py-4 shadow-md">
       <nav className="max-w-7xl mx-auto px-4 flex justify-between items-center sm:px-6 lg:px-8">
@@ -27,7 +30,7 @@ const Navbar = () => {
             {/* Normal link */}
             <NavigationMenuItem>
               <NavigationMenuLink asChild>
-                <Link href="/news" className="px-3 py-2 hover:text-red-500">
+                <Link href="/news" className={`${pathname === '/news' ? 'text-red-500 font-semibold' : ''} px-3 py-2 hover:text-red-500`}>
                   News
                 </Link>
               </NavigationMenuLink>
@@ -65,7 +68,7 @@ const Navbar = () => {
              {/* Normal link */}
             <NavigationMenuItem>
               <NavigationMenuLink asChild>
-                <Link href="/about" className="px-3 py-2 hover:text-red-500">
+                <Link href="/about" className={`${pathname === '/about' ? 'text-red-500 font-semibold' : ''} px-3 py-2 hover:text-red-500`}>
                   About
                 </Link>
               </NavigationMenuLink>
@@ -73,7 +76,7 @@ const Navbar = () => {
              {/* Normal link */}
             <NavigationMenuItem>
               <NavigationMenuLink asChild>
-                <Link href="/contact" className="px-3 py-2 hover:text-red-500">
+                <Link href="/contact" className={`${pathname === '/contact' ? 'text-red-500 font-semibold' : ''} px-3 py-2 hover:text-red-500`}>
                   Contact
                 </Link>
               </NavigationMenuLink>
